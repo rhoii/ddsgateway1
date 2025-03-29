@@ -68,12 +68,14 @@ $app->singleton(
 |
 */
 //$app->middleware([
-//    App\Http\Middleware\ExampleMiddleware::class
+//    App\Http\Middleware\AuthenticateAccess::class
 //]);
 
-//$app->routeMiddleware([
-//   'auth' => App\Http\Middleware\Authenticate::class,
-//]);
+$app->routeMiddleware([
+   'auth' => App\Http\Middleware\Authenticate::class,
+   'client_credentials' => Laravel\Passport\Http\Middleware\CheckClientCredentials::class
+]);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -85,13 +87,13 @@ $app->singleton(
 | totally optional, so you are not required to uncomment this line.
 |
 */
-//$app->register(App\Providers\AppServiceProvider::class);
-//$app->register(App\Providers\EventServiceProvider::class);
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\EventServiceProvider::class);
 
 $app->register(App\Providers\AuthServiceProvider::class);
 
-//$app->register(Laravel\Passport\PassportServiceProvider::class);
-//$app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
+$app->register(Laravel\Passport\PassportServiceProvider::class);
+$app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

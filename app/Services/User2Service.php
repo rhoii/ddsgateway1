@@ -7,11 +7,25 @@ class User2Service
 {
     use ConsumesExternalService;
 
+    /**
+     * The base URI to consume the User2 Service
+     * @var string
+     */
     public $baseUri;
 
+    /**
+     * The secret to consume the User2 Service
+     * @var string
+     */
+    public $secret;
+
+    /**
+     * User2Service constructor
+     */
     public function __construct()
     {
         $this->baseUri = config('services.users2.base_uri');
+        $this->secret = config('services.users2.secret');
     }
 
     /**
