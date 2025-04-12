@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: lumen-gateway
+    env: php
+    plan: free
+    buildCommand: "composer install"
+    startCommand: "bash start.sh"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_NAME
+        value: Lumen

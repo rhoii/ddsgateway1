@@ -8,8 +8,9 @@
         "php": "^8.0",
         "dusterio/lumen-passport": "^0.3.8",
         "guzzlehttp/guzzle": "^7.9",
-        "laravel/lumen-framework": "^9.0",
-        "laravel/passport": "^10.0"
+        "laravel/lumen-framework": "^8.0",
+        "laravel/passport": "^10.0",
+        "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -29,6 +30,7 @@
         }
     },
     "scripts": {
+        "start": "bash start.sh",
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
