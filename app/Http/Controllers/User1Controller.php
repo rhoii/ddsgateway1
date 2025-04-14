@@ -46,7 +46,5 @@ class User1Controller extends Controller
             $this->user1Service->createUser1($request->all()),
             Response::HTTP_CREATED
         );
-    }
-
-    
+    }   
 }
